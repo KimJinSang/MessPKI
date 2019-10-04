@@ -1,0 +1,45 @@
+#client {
+  .container {
+    height: 600px;
+    display: flex;
+
+    .main-container {
+      flex: 1;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .sender-container {
+      .sender-textarea {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        font-size: 15px;
+      }
+    }
+
+    .button-container {
+      width: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10px;
+      
+      button  {
+        border: none;
+        outline: none;
+        background-color: #64b5f6;
+        padding: 10px;
+        color: #fff;
+        border-radius: 20px;
+        box-shadow: 2px 2px 2px #aaa;
+        cursor: pointer;
+        font-weight: bold;
+
+        &:hover {
+          background-color: #53a4e5;
+        }
+      }
+    }
+  }
+}

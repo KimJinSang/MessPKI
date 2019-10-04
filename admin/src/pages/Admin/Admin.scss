@@ -1,0 +1,35 @@
+#admin {
+  .user-list {
+    list-style: none;
+    border: 1px solid #777;
+    flex: 1;
+    padding: 10px;
+    overflow: auto;
+    width: 1000px;
+    height: 400px;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+    & > li {
+      border-bottom: 1px dashed #ccc;
+      padding: 15px;
+      display: flex;
+
+      &:last-child {
+        border: none;
+      }
+
+      & > span {
+        flex: 1;
+      }
+
+      .revoke-btn {
+        color: red;
+      }
+    }
+  }
+}

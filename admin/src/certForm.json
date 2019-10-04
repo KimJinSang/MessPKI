@@ -1,0 +1,9 @@
+{
+  "userInfo": {},
+  "issuerInfo": {
+    "email": "issuer@naver.ocm",
+    "name": "김한수"
+  },
+  "role": "메세지 인증",
+  "publickey": ""
+}
