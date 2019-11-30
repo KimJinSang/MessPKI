@@ -71,6 +71,7 @@ contract PKI {
         registry[certId] = Certificate(data, hash);
     }
 
+
     // A trusted entity signs a certificate (expiry is time in seconds)
     // 신뢰가능한 엔티티가 인증서에 서명 (expiry = 초 단위)
     function sign(uint certId, string memory _sign, uint expiry) public onlyOwner returns (uint signId) {
