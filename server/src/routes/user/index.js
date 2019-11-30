@@ -9,6 +9,9 @@ user.put('/update', update);
 user.get('/list', getList);
 user.get('/info/:hash', getInfo);
 
+/**
+ * 유저 등록 
+ */
 async function register(req, res) {
   try {
     const { name, email, hash } = req.body;
@@ -29,13 +32,17 @@ async function register(req, res) {
   }
 }
 
+// 유저 정보 업데이트
 async function update(req, res) {
   try {
-    const { hash } = req.body;
+    const { hash } = req.body; // hash : 유저 계정 hash 정보
+
+    // undefined 속성인 값들은 제외하고 유저 정보 업데이트
     await User.update({ hash }, req.body, {
       omitUndefined: true,
     });
 
+    // 업데이트 후 privatekey를 제외한 유저정보를 select 해와서 요청자에게 전송
     const data = await User.findOne({ hash }).select('-privatekey');
     res.status(200).send(data);
   } catch (e) {
@@ -44,6 +51,7 @@ async function update(req, res) {
   }
 }
 
+// 유저 리스트
 async function getList(req, res) {
   try {
     const data = await User.find().select('-privatekey');
@@ -54,6 +62,7 @@ async function getList(req, res) {
   }
 }
 
+// 유저 한명의 정보를 받아옴
 async function getInfo(req, res) {
   try {
     const { hash } = req.params;

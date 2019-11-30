@@ -20,7 +20,7 @@ contract PKI {
     //     uint level;
     // }
 
-    // 인증서
+    // 인증서(공개키 키링으로 변환)
     struct Certificate {
         string data;
         string hash;
